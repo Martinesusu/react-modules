@@ -6,3 +6,53 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+[data-scope="accordion"][data-part="item-trigger"] {
+  background: transparent; /* ไม่มีพื้นหลัง */
+  border: none; /* เอาขอบออก */
+  color: white;
+  font-size: 16px;
+  padding: 8px;
+  display: flex;
+  align-items: center; /* จัดให้อยู่กลางในแนวตั้ง */
+  width: 100%;
+}
+
+[data-scope="accordion"][data-part="item-indicator"] {
+  margin-left: auto; /* ดันลูกศรไปขวาสุด */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease; /* เพิ่ม animation การหมุน */
+}
+
+[data-scope="accordion"][data-state="open"] [data-part="item-indicator"] {
+  transform: rotate(180deg); /* หมุนลูกศรเมื่อเปิด Accordion */
+}
+
+[data-scope="accordion"][data-part="item-content"] {
+  background: transparent; /* ไม่มีพื้นหลัง */
+  border: none; /* เอาขอบออก */
+  color: white;
+  font-size: 16px;
+  padding: 8px;
+  text-align: left;
+}
+
+[data-scope="accordion"][data-part="root"] {
+  width: 100%; /* ปรับความกว้างให้เต็ม */
+  max-width: 800px; /* จำกัดความกว้างสูงสุด */
+  margin: 0 auto; /* กึ่งกลางหน้า */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* ระยะห่างระหว่างแต่ละ accordion */
+}
+
+[data-scope="accordion"][data-part="item"] {
+  border-bottom: 1px solid white; /* สีของเส้น */
+  padding-bottom: 8px; /* เพิ่มระยะห่างใต้เส้น */
+}
+
+[data-scope="accordion"][data-part="item"]:first-child {
+  border-top: 1px solid white; 
+}
